@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location de Voitures - Côte d'Ivoire</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; }
+    header { background: #1a73e8; color: white; padding: 20px; text-align: center; }
+    h1 { margin: 0; }
+    .cars { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+    .car { background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; }
+    .car img { width: 100%; height: 160px; object-fit: cover; }
+    .car-info { padding: 15px; }
+    .car-info h2 { margin: 0 0 10px; font-size: 1.2em; }
+    .car-info p { margin: 5px 0; font-size: 0.9em; color: #444; }
+    .btn { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #1a73e8; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    .btn:hover { background: #155ab6; }
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; }
+    .modal-content { background: white; padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    .modal-content h3 { margin-top: 0; }
+    .modal-content label { display: block; margin-top: 10px; font-size: 0.9em; }
+    .modal-content input { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px; }
+    .close { float: right; font-size: 20px; cursor: pointer; color: #999; }
+    .close:hover { color: black; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 Location de Voitures en Côte d'Ivoire</h1>
+    <p>Réservez votre voiture en ligne et contactez-nous via WhatsApp</p>
+  </header>
+
+  <main class="cars">
+    <div class="car">
+      <img src="https://dummyimage.com/400x200/000/fff&text=Range+Rover+Sport" alt="Range Rover">
+      <div class="car-info">
+        <h2>Range Rover Sport</h2>
+        <p>Diesel – Automatique</p>
+        <p><strong>250 000 XOF / jour</strong></p>
+        <button class="btn" onclick="openForm('Range Rover Sport')">Réserver</button>
+      </div>
+    </div>
+
+    <div class="car">
+      <img src="https://dummyimage.com/400x200/000/fff&text=Tesla+Model+3" alt="Tesla Model 3">
+      <div class="car-info">
+        <h2>Tesla Model 3</h2>
+        <p>Électrique – Automatique</p>
+        <p><strong>150 000 XOF / jour</strong></p>
+        <button class="btn" onclick="openForm('Tesla Model 3')">Réserver</button>
+      </div>
+    </div>
+
+    <div class="car">
+      <img src="https://dummyimage.com/400x200/000/fff&text=Cybertruck" alt="Tesla Cybertruck">
+      <div class="car-info">
+        <h2>Tesla Cybertruck</h2>
+        <p>Électrique – Automatique</p>
+        <p><strong>200 000 XOF / jour</strong></p>
+        <button class="btn" onclick="openForm('Tesla Cybertruck')">Réserver</button>
+      </div>
+    </div>
+
+    <div class="car">
+      <img src="https://dummyimage.com/400x200/000/fff&text=Toyota+Corolla" alt="Toyota Corolla">
+      <div class="car-info">
+        <h2>Toyota Corolla</h2>
+        <p>Essence – Manuelle</p>
+        <p><strong>60 000 XOF / jour</strong></p>
+        <button class="btn" onclick="openForm('Toyota Corolla')">Réserver</button>
+      </div>
+    </div>
+
+    <div class="car">
+      <img src="https://dummyimage.com/400x200/000/fff&text=Hyundai+Accent" alt="Hyundai Accent">
+      <div class="car-info">
+        <h2>Hyundai Accent</h2>
+        <p>Essence – Automatique</p>
+        <p><strong>70 000 XOF / jour</strong></p>
+        <button class="btn" onclick="openForm('Hyundai Accent')">Réserver</button>
+      </div>
+    </div>
+
+    <div class="car">
+      <img src="https://dummyimage.com/400x200/000/fff&text=Kia+Sportage" alt="Kia Sportage">
+      <div class="car-info">
+        <h2>Kia Sportage</h2>
+        <p>Diesel – Automatique</p>
+        <p><strong>90 000 XOF / jour</strong></p>
+        <button class="btn" onclick="openForm('Kia Sportage')">Réserver</button>
+      </div>
+    </div>
+
+    <div class="car">
+      <img src="https://dummyimage.com/400x200/000/fff&text=Mercedes+C-Class" alt="Mercedes-Benz Classe C">
+      <div class="car-info">
+        <h2>Mercedes-Benz Classe C</h2>
+        <p>Diesel – Automatique</p>
+        <p><strong>180 000 XOF / jour</strong></p>
+        <button class="btn" onclick="openForm('Mercedes Classe C')">Réserver</button>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal" id="reservationModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h3>Réserver</h3>
+      <form id="reservationForm" onsubmit="sendWhatsApp(event)">
+        <input type="hidden" id="carName">
+        <label>Votre Nom</label>
+        <input type="text" id="name" required>
+        <label>Date de début</label>
+        <input type="date" id="startDate" required>
+        <label>Date de fin</label>
+        <input type="date" id="endDate" required>
+        <button type="submit" class="btn">Envoyer sur WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('reservationModal');
+    const carInput = document.getElementById('carName');
+
+    function openForm(car) {
+      modal.style.display = 'flex';
+      carInput.value = car;
+    }
+
+    function closeForm() {
+      modal.style.display = 'none';
+    }
+
+    function sendWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const start = document.getElementById('startDate').value;
+      const end = document.getElementById('endDate').value;
+      const car = carInput.value;
+      const phone = "2250102030405";
+      const message = `Bonjour, je suis ${name}. Je souhaite réserver la ${car} du ${start} au ${end}.`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+      closeForm();
+    }
+  </script>
+</body>
+</html>
