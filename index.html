@@ -6,42 +6,36 @@
   <title>Location de Voitures - Côte d'Ivoire</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      background: #fdfdfd;
-      color: #222;
+      background: #f9f9f9;
+      color: #333;
     }
     header {
-      background: #111;
-      color: #f4c542;
+      background: #222;
+      color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1.5rem;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #ddd;
+      font-size: 2rem;
     }
     .cars {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      padding: 30px;
+      gap: 20px;
+      padding: 20px;
     }
     .car-card {
       background: white;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s;
     }
     .car-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
     }
     .car-card img {
       width: 100%;
@@ -49,161 +43,53 @@
       object-fit: cover;
     }
     .car-info {
-      padding: 18px;
+      padding: 15px;
     }
     .car-info h3 {
       margin: 0 0 10px;
-      color: #111;
-      font-size: 1.3rem;
+      color: #222;
     }
     .car-info p {
       margin: 5px 0;
-      color: #555;
-    }
-    .reservation {
-      max-width: 650px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .reservation h2 {
-      text-align: center;
-      color: #111;
-      margin-bottom: 20px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    input, select, button {
-      padding: 14px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 1rem;
-    }
-    button {
-      background: #f4c542;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background: #d4a91e;
     }
     footer {
       text-align: center;
-      background: #111;
-      color: #ddd;
-      padding: 1.2rem;
-      margin-top: 30px;
+      background: #222;
+      color: white;
+      padding: 1rem;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🚘 Location Premium Côte d'Ivoire</h1>
-    <p>Roulez le luxe à prix abordable</p>
+    <h1>🚗 Location de Voitures en Côte d'Ivoire</h1>
+    <p>Des voitures de luxe et économiques à prix abordables</p>
   </header>
 
   <section class="cars">
+    <!-- Exemple avec ta propre image Range Rover -->
     <div class="car-card">
-      <img src="https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg" alt="Toyota Prado">
-      <div class="car-info">
-        <h3>Toyota Prado</h3>
-        <p>Prix : 45.000 FCFA / jour</p>
-      </div>
-    </div>
-
-    <div class="car-card">
-      <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg" alt="Range Rover Sport">
+      <img src="range-rover.jpg" alt="Range Rover">
       <div class="car-info">
         <h3>Range Rover Sport</h3>
         <p>Prix : 80.000 FCFA / jour</p>
       </div>
     </div>
 
+    <!-- Exemple avec une autre voiture (photo en ligne pour l’instant) -->
     <div class="car-card">
-      <img src="https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg" alt="Tesla Model 3">
+      <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg" alt="Toyota Prado">
       <div class="car-info">
-        <h3>Tesla Model 3</h3>
-        <p>Prix : 70.000 FCFA / jour</p>
+        <h3>Toyota Prado</h3>
+        <p>Prix : 45.000 FCFA / jour</p>
       </div>
     </div>
-
-    <div class="car-card">
-      <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg" alt="Tesla Cybertruck">
-      <div class="car-info">
-        <h3>Tesla Cybertruck</h3>
-        <p>Prix : 90.000 FCFA / jour</p>
-      </div>
-    </div>
-
-    <div class="car-card">
-      <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg" alt="Toyota Hilux">
-      <div class="car-info">
-        <h3>Toyota Hilux</h3>
-        <p>Prix : 55.000 FCFA / jour</p>
-      </div>
-    </div>
-
-    <div class="car-card">
-      <img src="https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg" alt="Mercedes GLE">
-      <div class="car-info">
-        <h3>Mercedes GLE</h3>
-        <p>Prix : 85.000 FCFA / jour</p>
-      </div>
-    </div>
-
-    <div class="car-card">
-      <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg" alt="Toyota Land Cruiser V8">
-      <div class="car-info">
-        <h3>Toyota Land Cruiser V8</h3>
-        <p>Prix : 95.000 FCFA / jour</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="reservation">
-    <h2>📋 Réserver une voiture</h2>
-    <form id="reservationForm">
-      <input type="text" id="nom" placeholder="Votre nom complet" required>
-      <input type="date" id="date" required>
-      <input type="number" id="jours" placeholder="Nombre de jours" required>
-      <select id="modele" required>
-        <option value="">-- Choisir un modèle --</option>
-        <option value="Toyota Prado">Toyota Prado</option>
-        <option value="Range Rover Sport">Range Rover Sport</option>
-        <option value="Tesla Model 3">Tesla Model 3</option>
-        <option value="Tesla Cybertruck">Tesla Cybertruck</option>
-        <option value="Toyota Hilux">Toyota Hilux</option>
-        <option value="Mercedes GLE">Mercedes GLE</option>
-        <option value="Toyota Land Cruiser V8">Toyota Land Cruiser V8</option>
-      </select>
-      <button type="submit">Réserver via WhatsApp</button>
-    </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 Location Premium CI - Tous droits réservés</p>
+    <p>&copy; 2025 Location de Voitures Côte d'Ivoire - Tous droits réservés</p>
   </footer>
-
-  <script>
-    document.getElementById("reservationForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      let nom = document.getElementById("nom").value;
-      let date = document.getElementById("date").value;
-      let jours = document.getElementById("jours").value;
-      let modele = document.getElementById("modele").value;
-
-      let message = `Bonjour, je suis ${nom}. Je souhaite réserver la ${modele} à partir du ${date} pour ${jours} jour(s).`;
-      let url = `https://wa.me/2250102030405?text=${encodeURIComponent(message)}`;
-
-      window.open(url, "_blank");
-    });
-  </script>
 </body>
 </html>
+
