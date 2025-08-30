@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IvoryCars Location - Côte d'Ivoire</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #FFD700;
+    }
+    header nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    header nav a:hover {
+      color: #FFD700;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: url('https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg') center/cover no-repeat;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+    .cars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 2rem;
+    }
+    .car-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .car-card:hover {
+      transform: translateY(-5px);
+    }
+    .car-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .car-info {
+      padding: 1rem;
+    }
+    .car-info h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #111;
+    }
+    .car-info p {
+      margin: 0.5rem 0;
+    }
+    .btn-whatsapp {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .btn-whatsapp:hover {
+      background: #1EBE57;
+    }
+    footer {
+      text-align: center;
+      background: #111;
+      color: white;
+      padding: 1rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🚗 IvoryCars</div>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Nos Voitures</a>
+      <a href="#">Réserver</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Louez votre voiture de rêve en Côte d'Ivoire</h1>
+    <p>Premium, confort et prix abordables</p>
+  </section>
+
+  <section class="cars">
+    <div class="car-card">
+      <img src="https://cdn.motor1.com/images/mgl/0ANlo/s1/2023-range-rover-sport.jpg" alt="Range Rover">
+      <div class="car-info">
+        <h3>Range Rover Sport</h3>
+        <p>80.000 FCFA / jour</p>
+        <a href="https://wa.me/2250102030405?text=Je%20veux%20réserver%20un%20Range%20Rover" class="btn-whatsapp">Réserver</a>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="https://www.toyota.ci/wp-content/uploads/2020/06/prado.jpg" alt="Toyota Prado">
+      <div class="car-info">
+        <h3>Toyota Prado</h3>
+        <p>45.000 FCFA / jour</p>
+        <a href="https://wa.me/2250102030405?text=Je%20veux%20réserver%20un%20Toyota%20Prado" class="btn-whatsapp">Réserver</a>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="https://cdn.carsguide.com.au/sites/default/files/2021-toyota-landcruiser-300-vx-suv-white-1200x800-%281%29.jpg" alt="Toyota Land Cruiser V8">
+      <div class="car-info">
+        <h3>Land Cruiser V8</h3>
+        <p>60.000 FCFA / jour</p>
+        <a href="https://wa.me/2250102030405?text=Je%20veux%20réserver%20un%20Land%20Cruiser%20V8" class="btn-whatsapp">Réserver</a>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="https://www.mercedes-benz.com.eg/content/dam/hq/passenger-cars/cars/gle/suv-v167-fl-pi/model-overview/09-2023/images/gle-suv-v167-fl-pi-modeloverview-696x392-09-2023.jpg" alt="Mercedes GLE">
+      <div class="car-info">
+        <h3>Mercedes GLE</h3>
+        <p>70.000 FCFA / jour</p>
+        <a href="https://wa.me/2250102030405?text=Je%20veux%20réserver%20un%20Mercedes%20GLE" class="btn-whatsapp">Réserver</a>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/761d3e6c-144e-48eb-8f9a-42d63580c860/bvlatuR/std/1200x628/ms-main-hero-desktop" alt="Tesla Model 3">
+      <div class="car-info">
+        <h3>Tesla Model 3</h3>
+        <p>100.000 FCFA / jour</p>
+        <a href="https://wa.me/2250102030405?text=Je%20veux%20réserver%20une%20Tesla%20Model%203" class="btn-whatsapp">Réserver</a>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="https://cdn.motor1.com/images/mgl/9qq2z/s1/tesla-cybertruck.jpg" alt="Tesla Cybertruck">
+      <div class="car-info">
+        <h3>Tesla Cybertruck</h3>
+        <p>120.000 FCFA / jour</p>
+        <a href="https://wa.me/2250102030405?text=Je%20veux%20réserver%20un%20Cybertruck" class="btn-whatsapp">Réserver</a>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="https://www.toyota.com/imgix/content/dam/toyota/jellies/max/2022/hilux/hlxhero.jpg" alt="Toyota Hilux">
+      <div class="car-info">
+        <h3>Toyota Hilux</h3>
+        <p>40.000 FCFA / jour</p>
+        <a href="https://wa.me/2250102030405?text=Je%20veux%20réserver%20un%20Hilux" class="btn-whatsapp">Réserver</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 IvoryCars Location - Tous droits réservés</p>
+  </footer>
+</body>
+</html>
